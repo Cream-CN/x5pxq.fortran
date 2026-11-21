@@ -1,0 +1,27 @@
+!
+! resource.fd generated from Resource.h
+!
+      integer, parameter :: IDC_EXPR_IN = 1020
+      integer, parameter :: IDM_EXPR_TO_R128 = 30003
+      integer, parameter :: IDD_x5pxqgui_DIALOG = 101
+      integer, parameter :: IDM_SOLVE = 30002
+      integer, parameter :: IDM_HELP_ABOUT = 30005
+      integer, parameter :: IDM_HELP_METHOD = 30004
+      integer, parameter :: IDR_MAINMENU = 102
+      integer, parameter :: IDD_METHOD = 104
+      integer, parameter :: IDD_ABOUT = 105
+      integer, parameter :: IDC_RESULT = 1010
+      integer, parameter :: IDM_EXIT = 30001
+      integer, parameter :: IDC_EDIT_A0 = 1005
+      integer, parameter :: IDC_EDIT_A1 = 1004
+      integer, parameter :: IDC_EDIT_A2 = 1003
+      integer, parameter :: IDC_EDIT_A3 = 1002
+      integer, parameter :: IDC_EDIT_A4 = 1001
+      integer, parameter :: IDC_EDIT_A5 = 1000
+      integer, parameter :: IDC_EDIT_RHS = 1006
+      integer, parameter :: IDD_EXPR = 103
+      integer, parameter :: IDM_EXPR_CLOSE = 30007
+      integer, parameter :: IDC_EXPR_OUT = 1021
+      integer, parameter :: IDC_METHOD_TEXT = 1022
+      integer, parameter :: IDM_EXPR_CONVERT = 30006
+      integer, parameter :: IDC_PLOT = 1030

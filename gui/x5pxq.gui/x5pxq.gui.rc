@@ -1,0 +1,234 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+#include "winver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(65001)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+IDR_MAINMENU MENU
+BEGIN
+    POPUP "工具"
+    BEGIN
+        MENUITEM "精确代数式转 REAL(128)",IDM_EXPR_TO_R128
+    END
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "五次方程近似法",IDM_HELP_METHOD
+        MENUITEM "关于",IDM_HELP_ABOUT
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+IDD_x5pxqgui_DIALOG DIALOGEX  30, 20, 800, 300
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "五次方程求根器 · x5pxq (REAL(128) 四精度)"
+FONT 9, "Microsoft YaHei UI"
+BEGIN
+    GROUPBOX        "方程（按填入的 A5…A0 与 RHS 得到实际系数）",IDC_STATIC,7,7,446,112
+    LTEXT           "A5 =",IDC_STATIC,16,23,26,10,SS_RIGHT
+    EDITTEXT        IDC_EDIT_A5,46,20,90,13,ES_AUTOHSCROLL
+    LTEXT           "A4 =",IDC_STATIC,228,23,26,10,SS_RIGHT
+    EDITTEXT        IDC_EDIT_A4,258,20,90,13,ES_AUTOHSCROLL
+    LTEXT           "A3 =",IDC_STATIC,16,41,26,10,SS_RIGHT
+    EDITTEXT        IDC_EDIT_A3,46,38,90,13,ES_AUTOHSCROLL
+    LTEXT           "A2 =",IDC_STATIC,228,41,26,10,SS_RIGHT
+    EDITTEXT        IDC_EDIT_A2,258,38,90,13,ES_AUTOHSCROLL
+    LTEXT           "A1 =",IDC_STATIC,16,59,26,10,SS_RIGHT
+    EDITTEXT        IDC_EDIT_A1,46,56,90,13,ES_AUTOHSCROLL
+    LTEXT           "A0 =",IDC_STATIC,228,59,26,10,SS_RIGHT
+    EDITTEXT        IDC_EDIT_A0,258,56,90,13,ES_AUTOHSCROLL
+    LTEXT           "RHS =",IDC_STATIC,16,77,26,10,SS_RIGHT
+    EDITTEXT        IDC_EDIT_RHS,46,74,90,13,ES_AUTOHSCROLL
+    LTEXT           "可输入小数或 1e-3、1.5E20 等写法；A5 不能为 0。",IDC_STATIC,258,77,180,10
+    LTEXT           "方程等价于 A5*x^5 + A4*x^4 + A3*x^3 + A2*x^2 + A1*x + (A0 - RHS) = 0；求解后结果区第一行会写出带入实际系数的方程。",IDC_STATIC,16,96,430,10
+    DEFPUSHBUTTON   "求解 (Solve)",IDM_SOLVE,7,124,90,18
+    PUSHBUTTON      "退出 (Exit)",IDM_EXIT,105,124,66,18
+    LTEXT           "结果区：5 个根 + 实部/虚部误差 + 残差判定",IDC_STATIC,180,129,270,10
+    CONTROL         "",IDC_RESULT,"Edit",ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL | ES_AUTOHSCROLL |
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,7,148,446,144
+    GROUPBOX        "五次函数图像与 5 个根的位置",IDC_STATIC,462,7,331,285
+    CONTROL         "",IDC_PLOT,"Static",WS_BORDER,468,21,319,265
+END
+
+IDD_EXPR DIALOGEX  0, 0, 430, 250
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "精确代数式转 REAL(128)"
+FONT 9, "Microsoft YaHei UI"
+BEGIN
+    LTEXT           "代数式（支持 + - * / **、括号、pi、e，以及 sqrt/abs/exp/log/log10/sin/cos/tan/asin/acos/atan/sinh/cosh/tanh）：",IDC_STATIC,10,8,410,20
+    EDITTEXT        IDC_EXPR_IN,10,30,410,13,ES_AUTOHSCROLL
+    LTEXT           "示例：1/3、sqrt(2)、pi/4、(1+sqrt(5))/2、2**0.5、1e-20",IDC_STATIC,10,48,410,10
+    DEFPUSHBUTTON   "转换 (Convert)",IDM_EXPR_CONVERT,10,64,88,18
+    PUSHBUTTON      "关闭 (Close)",IDM_EXPR_CLOSE,106,64,70,18
+    LTEXT           "四精度结果：",IDC_STATIC,10,90,200,10
+    CONTROL         "",IDC_EXPR_OUT,"Edit",ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL |
+                    WS_VSCROLL | WS_TABSTOP,10,104,410,138
+END
+
+IDD_METHOD DIALOGEX  0, 0, 470, 320
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "五次方程近似解法"
+FONT 9, "Microsoft YaHei UI"
+BEGIN
+    LTEXT           "求解流程：尺度归一化 → 根界估计 → Newton 迭代 → 对原方程精修 → 共轭配对 → 相对残差判定",IDC_STATIC,10,8,450,10
+    CONTROL         "",IDC_METHOD_TEXT,"Edit",ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL |
+                    WS_VSCROLL | WS_TABSTOP,10,22,450,268
+    DEFPUSHBUTTON   "确定",IDOK,195,296,70,18
+END
+
+IDD_ABOUT DIALOGEX  0, 0, 340, 168
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于"
+FONT 9, "Microsoft YaHei UI"
+BEGIN
+    LTEXT           "五次方程求根器  x5pxq  1.0",IDC_STATIC,16,14,300,14
+    LTEXT           "Intel Fortran + IFLOGM 对话框程序（Intel oneAPI 2026.1）",IDC_STATIC,16,32,300,10
+    LTEXT           "求解精度：REAL(128) 四精度，约 33–34 位十进制有效数字",IDC_STATIC,16,48,300,10
+    LTEXT           "残差判定：相对残差阈值 1e-20，输出 PASS / FAIL",IDC_STATIC,16,64,300,10
+    LTEXT           "算法：Fujiwara 根界 + 多初值 Newton + 原方程精修 + 共轭配对",IDC_STATIC,16,80,300,10
+    LTEXT           "工具 → 精确代数式转 REAL(128)：把 1/3、sqrt(2)、pi 等写成四精度数值",IDC_STATIC,16,96,300,10
+    LTEXT           "帮助 → 五次方程近似法：查看算法说明与重根精度限制",IDC_STATIC,16,112,300,10
+    DEFPUSHBUTTON   "确定",IDOK,135,140,70,18
+END
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(65001)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+x5pxqgui     ICON    "x5pxq.gui.ico"
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+ FILEFLAGS VS_FF_DEBUG
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS VOS__WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName", "My Company\0"
+            VALUE "FileDescription", "x5pxq.gui Application\0"
+            VALUE "FileVersion", "1.0\0"
+            VALUE "InternalName", "x5pxq.gui\0"
+            VALUE "LegalCopyright", "\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "ProductName", "x5pxq.gui\0"
+            VALUE "ProductVersion", "1.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "#include ""winres.h""\r\n"
+    "#include ""winver.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    0                       " "
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
