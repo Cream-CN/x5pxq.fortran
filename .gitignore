@@ -5,3 +5,8 @@
 /.vs
 /build
 *.obj
+/gui/x5pxq.gui/.vs/x5pxq.gui.slnx/FileContentIndex
+/gui/x5pxq.gui/.vs/x5pxq.gui.slnx/v18
+/gui/x5pxq.gui/ReadMe.txt
+/gui/x5pxq.gui/x64/Release
+/gui/x5pxq.gui/build
